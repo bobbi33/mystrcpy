@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include "string.h"
+
+#define STRLEN 30
+
+char *mystrcpy(char *strDest, const char *strSrc){
+	if(strDest == NULL || strSrc == NULL)
+		return NULL;
+
+	if(strDest == strSrc)
+		return strDest;
+
+	char *tempptr = strDest;
+	while(( *tempptr++ = *strSrc++) != '\0');
+
+	return 0;
+}
+
+int main(){
+	char *strSrc = "how long will I love you";
+	char strDest[STRLEN];
+	memset(strDest, 0 , STRLEN);
+
+	printf("strDest = %s\n",strDest);
+	mystrcpy(strDest, strSrc);
+	printf("strDest = %s\n",strDest);
+
+	return 0;
+}
